@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+class Shape{
+    public:
+        void draw(){
+            cout<<"Drawing Shape"<<endl;
+        }
+        virtual void area(){
+            cout<<"Area of Shape"<<endl;
+        }
+};
+class Rectangle : public Shape{
+    public:
+        void draw(){
+            cout<<"Drawing Rectangle"<<endl;
+        }
+        void area(){
+            cout<<"Area of Rectangle"<<endl;
+        }
+};
+int main(){
+    Shape s1, *sptr;
+    Rectangle s2, *rptr;
+    sptr = &s1;
+    rptr = &s2;
+    sptr->area();
+    sptr->draw();
+    rptr->area();
+    rptr->draw();
+    return 0;
+}
