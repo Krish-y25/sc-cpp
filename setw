@@ -1,0 +1,16 @@
+#include<iostream>
+#include<string.h>
+#include <iomanip>
+#include<cmath>
+using namespace std;
+int main(){
+    // cout.fill('%');
+    // cout.setf(ios::left, ios::adjustfield);
+    // cout.width(15);
+    // cout<<"Table 1 "<<endl;
+    double p1 = M_PI;
+    for(int i = 1; i< 15; i++){
+        cout<<setprecision(i)<<p1<<endl;
+    }
+    return 0;
+}
