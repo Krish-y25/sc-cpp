@@ -1,0 +1,35 @@
+//Input and Output functions usage in cpp - 2
+#include <iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+    ofstream fout;
+    fout.open("Country");
+    fout<<"USA\n";
+    fout<<"India\n";
+    fout.close();
+    fout.open("Capital");
+    fout<<"Washington\n";
+    fout<<"Delhi\n";
+    fout.close();
+    
+    const int n = 80;
+    char line[n];
+    ifstream fin;
+    fin.open("Country");
+    cout<<"Contents of Country file\n";
+    while(fin){
+        fin.getline(line, n);
+        cout<<line<<endl;
+    }
+    fin.close();
+    fin.open("Capital");
+    cout<<"Contents of Capital file\n";
+    while(fin){
+        fin.getline(line, n);
+        cout<<line<<endl;
+    }
+    fin.close();
+    return 0;
+}
