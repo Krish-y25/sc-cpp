@@ -1,4 +1,7 @@
 //Input and Output functions usage in cpp - 2
+
+//Program 1
+
 #include <iostream>
 #include<fstream>
 using namespace std;
@@ -31,5 +34,34 @@ int main()
         cout<<line<<endl;
     }
     fin.close();
+    return 0;
+}
+
+//Program 2
+
+#include <iostream>
+#include<fstream>
+#include<stdlib.h>
+using namespace std;
+int main()
+{
+    const int size = 80;
+    char line[size];
+    ifstream fin1, fin2;
+    fin1.open("Country");
+    fin2.open("Capital");
+    for(int i = 1; i<=10; i++){
+        if(fin2.eof() != 0){
+            cout<<"Exit from capital\n";
+        }
+        if(fin1.eof() != 0){
+            cout<<"Exit from country\n";
+            exit(1);
+        }
+        fin1.getline(line, size);
+        cout<<"Capital of "<<line<<endl;
+        fin2.getline(line, size);
+        cout<<line<<endl;
+    }
     return 0;
 }
